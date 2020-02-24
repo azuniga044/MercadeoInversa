@@ -25,7 +25,7 @@ class CreateLicenciasTable extends Migration
             $table->string('cantidadProducto');
             $table->date('fechaCompra');
             $table->date('fechaExpiracion');
-            $table->integer('idAdministrador')->unsigned();
+            $table->unsignedBigInteger('idAdministrador');
             $table->timestamps();
 
             //relaciones

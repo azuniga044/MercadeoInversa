@@ -15,7 +15,7 @@ class CreateEmpresasOfertasTable extends Migration
     {
         Schema::create('empresas_ofertas', function (Blueprint $table) {
             $table->bigIncrements('idOferta')->unsigned();
-            $table->integer('rifEmpresa')->unsigned();
+            $table->unsignedBigInteger('rifEmpresa');
 
              //relaciones
            $table->foreign('idOferta')->references('id')->on('ofertas')

@@ -17,7 +17,7 @@ class CreatePagosTable extends Migration
             $table->bigIncrements('id');
             $table->datetime('fecha');
             $table->float('costo');
-            $table->integer('idLicencia')->unsigned();
+            $table->unsignedBigInteger('idLicencia');
 
             //relaciones
             $table->foreign('idLicencia')->references('id')->on('licencias')

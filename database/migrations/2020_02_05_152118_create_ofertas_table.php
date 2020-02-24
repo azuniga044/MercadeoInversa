@@ -17,7 +17,7 @@ class CreateOfertasTable extends Migration
             $table->bigIncrements('id');
             $table->date('FechaEmision');
             $table->string('busqueda');
-            $table->integer('idCliente')->unsigned();
+            $table->unsignedBigInteger('idCliente');
 
             //relaciones
             $table->foreign('idCliente')->references('id')->on('clientes')

@@ -21,11 +21,11 @@ class CreateProductosTable extends Migration
             $table->string('genero')->nullable();
             $table->date('fechaVencimiento')->nullable();
             $table->string('descripcion')->nullable();
-            $table->integer('idCategoria')->unsigned();
-            $table->integer('idEmpresa')->unsigned();
+            $table->unsignedBigInteger('idCategoria');
+            $table->unsignedBigInteger('idEmpresa');
             $table->string('slug')->unique(); //URL Amigable
 
-            
+
             //relaciones
           $table->foreign('idCategoria')->references('id')->on('categorias')
                 ->onDelete('cascade')
