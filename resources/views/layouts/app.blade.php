@@ -19,11 +19,25 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('librerias/bootstrap-4.4.1-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
 
+    .navbar-nav > li > a, .navbar-brand {
+     padding-top:5px !important; padding-bottom:0 !important;
+        height: 70px; /* aqui escoges el alto que necesites */
+    }
+    .navbar {
+        min-height:30px !important; /* aqui escoges el alto que necesites */
+    }
+    .navbar-light .navbar-nav .nav-link{
+        color: #272C66;
+        padding: 0 25px;
+        font-size: 18px;
+    }
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-warning shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Mercadeo_Inversa') }}
@@ -43,11 +57,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
