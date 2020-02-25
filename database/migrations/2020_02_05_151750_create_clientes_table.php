@@ -20,8 +20,8 @@ class CreateClientesTable extends Migration
             $table->string('apellido');
             $table->string('direccion');
             $table->string('telefono');
-            $table->integer('idlicencia')->unsigned();
-            $table->integer('idUsuario')->unsigned();
+            $table->unsignedBigInteger('idlicencia');
+            $table->unsignedBigInteger('idUsuario');
 
              //relaciones
              $table->foreign('idlicencia')->references('id')->on('licencias')

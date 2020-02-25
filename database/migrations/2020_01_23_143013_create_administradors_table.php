@@ -14,14 +14,14 @@ class CreateAdministradorsTable extends Migration
     public function up()
     {
         Schema::create('administradors', function (Blueprint $table) {
-            
+
             $table->bigIncrements('id');
             $table->string('cedula');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('direccion');
             $table->string('telefono');
-            $table->integer('idUsuario')->unsigned();
+            $table->unsignedBigInteger('idUsuario');
             $table->timestamps();
 
             //relaciones

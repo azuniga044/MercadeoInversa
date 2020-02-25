@@ -19,8 +19,8 @@ class CreateEmpresasTable extends Migration
             $table->string('nombre');
             $table->string('direccion');
             $table->string('telefono');
-            $table->integer('idLicencia')->unsigned();
-            $table->integer('idUsuario')->unsigned();
+            $table->unsignedBigInteger('idLicencia');
+            $table->unsignedBigInteger('idUsuario');
 
              //relaciones
              $table->foreign('idLicencia')->references('id')->on('licencias')

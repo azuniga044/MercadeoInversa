@@ -11,8 +11,13 @@
 |
 */
 
-Route::redirect('/', 'mercado');
+Route::get('/', function (){
+
+    return view('welcome');
+
+})->middleware('guest');
+//Route::redirect('/', 'mercado');
 
 Auth::routes();
 
-Route::get('mercado', 'Web\PageController@mercado')->name('mercado');
+//Route::get('mercado', 'Web\PageController@mercado')->name('mercado');
